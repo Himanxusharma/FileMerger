@@ -1,0 +1,283 @@
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+  }
+  
+  .nav-links li {
+    list-style: none;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  .logo a {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  /* Hamburger menu */
+  .burger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* Hamburger menu */
+    .burger {
+      display: block;
+    }
+    
+    /* Navigation */
+    .nav-links {
+      position: fixed;
+      background-color: #333;
+      height: 100vh;
+      width: 100%;
+      top: 60px;
+      left: -100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.5s ease;
+    }
+  
+    .nav-links li {
+      opacity: 0;
+    }
+  
+    .nav-active {
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+    
+    /* Animate navigation links */
+    .nav-links li {
+      opacity: 0;
+    }
+  
+    .nav-links li a {
+      font-size: 20px;
+      padding: 20px;
+    }
+  }
+  
+  /* Animate burger menu */
+  .burger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .burger.active div:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Animate navigation links */
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /*  Drag and Drop  */
+  
+  .file-upload-container {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .drag-text {
+    margin-bottom: 10px;
+  }
+  
+  .fa-cloud-upload {
+    font-size: 50px;
+    color: #ccc;
+  }
+  
+  .file-list {
+    margin-bottom: 10px;
+  }
+  
+  .file {
+    display: inline-block;
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+    margin-right: 10px;
+  }
+  
+  .file i {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .file i:hover {
+    color: #ff0000;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @media (max-width: 767px) {
+    .file-upload-container {
+      padding: 10px;
+    }
+    .file {
+      font-size: 14px;
+      padding: 3px 5px;
+      margin-right: 5px;
+    }
+  }
+  
+  
+  /* footer */
+  
+  footer {
+    background-color: #f5f5f5;
+    padding: 30px 0;
+    margin-top: 50px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    
+    margin: 0 auto;
+  }
+  
+  h4 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    line-height: 1.6;
+  }
+  
+  .fa {
+    margin-right: 10px;
+  }
+  
+  hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 767px) {
+    .container {
+      padding: 0 20px;
+    }
+  }
+  
+
+
+    /* list about page */
+
+    .list-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .list li {
+      margin: 10px 0;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .list-container {
+        padding: 10px;
+      }
+      
+      .list li {
+        margin: 5px 0;
+      }
+    }
+
+
+      /* para about page*/
+
+  .bcontainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1, h2, h3 {
+    margin-top: 40px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+    
+    h1, h2, h3 {
+      margin-top: 20px;
+    }
+  }
+  
+  /* UPLOAD button */
+
+  .custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #2196F3;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #1565C0;
+  }
+  
+  .custom-file-upload:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #2196F3;
+  }
