@@ -10,7 +10,9 @@
 	<h3>Form is running</h3>
 
 	<form action="uploadfile" method="post" enctype="multipart/form-data">
-		<input type="file" id="myFile" name="filename" name="file" > 
+		<input type="file" id="myFile" name="file1" name="file" > 
+
+		<input type="file" id="myFile" name="file2" name="file" > 
 		<button Class="" name="upload">Upload</button>
 	</form>
 

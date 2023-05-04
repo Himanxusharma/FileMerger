@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 
 	@RequestMapping(path = "/home", method = RequestMethod.GET)
-	public String home(Model model) {
+	public String home() {
 		System.out.println("Home url is running.");
 		return "index";
 	}

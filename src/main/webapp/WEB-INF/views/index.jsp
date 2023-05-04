@@ -34,7 +34,7 @@
     </div>
     <ul class="nav-links">
       <li><a href="#">Home</a></li>
-      <li><a href="html/about.html">About</a></li>
+      <li><a href= "about" >About</a></li>
       <li><a href="html/Table.html">Tables</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
