@@ -23,5 +23,13 @@ public class HomeController {
 
 	}
 	
+	@RequestMapping("/about")
+	public String about() {
+		
+		System.out.println("About is running");
+		return "about";
+		
+	}
+	
 	 
 }
