@@ -37,26 +37,4 @@
 	
 	<!-- confugring multipart resolver -->
 	<bean name="multipartResolver " class="org.springframework.web.multipart.commons.CommonsMultipartResolver"	/>
-<!-- 
-	<bean name="factory"
-		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-		<property name="dataSource" ref="ds" />
-		<property name="hibernateProperties">
-			<props>
-				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
-				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
-				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
-			</props>
-		</property>
-		<property name="packagesToScan"
-			value="com.concretepage.entity" />
-	</bean>
-
-	<bean name="hibernateTemplate"
-		class="org.springframework.orm.hibernate5.HibernateTemplate">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-
- -->
-
 </beans> 

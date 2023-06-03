@@ -25,8 +25,8 @@
 <!-- Navbar -->
 
 <nav>
-    <div class="logo">
-      <a href="home">File Merger</a>
+    <div class="logo text-center">
+      <a href="/fileMerger/">File Merger</a>
     </div>
     <div class="burger">
       <div class="line1"></div>

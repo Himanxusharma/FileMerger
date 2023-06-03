@@ -1,4 +1,5 @@
 <%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -8,106 +9,110 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-	<script src="<c:url value="/resources/js/mergeView.js" />"></script>
-	<script>
-		var dataMap = ${mergedDataMap};
-		// Call a function in your JavaScript file and pass the dataMap variable
-		view(dataMap);
-		
-		
-	</script>
+<title>FILEMERGER</title>
+<script src="<c:url value="/resources/js/mergeView.js" />"></script>
+<!-- Latest compiled and minified CSS -->
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/Preview.css" />"
+	rel="stylesheet">
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<script src="<c:url value="/resources/js/script.js" />"></script>
+<script src="<c:url value="/resources/js/Preview.js" />"></script>
+
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<h3>Successfully uploaded.</h3>
+	<!-- Navbar -->
 
-<!-- 	<h2>Merged Data Map:</h2>
-	<table>
-		<tr>
-			<th>Key</th>
-			<th>Value</th>
-		</tr>
+	<nav>
+		<div class="logo text-center">
+			<a href="/fileMerger/">File Merger</a>
+		</div>
+		<ul class="nav-links">
+			<!-- <li><a href= "about" >About</a></li> -->
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav> 
+	<h1>Merged</h1>
 
-
-		<c:forEach items="${mergedDataMap}" var="entry">
-			<tr>
-				<td>${entry.key}</td>
-				<td>${entry.value}</td>
-			</tr>
-
-		</c:forEach>
-	</table>  -->
-	
-<h2>Merged Data Map:</h2>
-<table id="mergedTable">
-    <tr>
-        <th>Value</th>
-    </tr>
-
-    <c:forEach items="${mergedDataMap}" var="entry">
-        <tr>
-            <td>${entry.value}</td>
-        </tr>
-    </c:forEach>
-</table>
-
-<!-- Add CSS and JavaScript for table formatting -->
 <style>
-    #mergedTable {
-        border-collapse: collapse;
+    /* CSS styles for the table */
+    table {
         width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #ddd; /* Add border around the table */
     }
-
-    #mergedTable th, #mergedTable td {
-        border: 1px solid black;
+    th, td {
         padding: 8px;
         text-align: left;
+        border-bottom: 1px solid #ddd;
+        border-right: 1px solid #ddd;
     }
-
-    #mergedTable th {
-        background-color: #f2f2f2;
+    th:last-child, td:last-child {
+        border-right: none;
     }
 </style>
 
+
+<table id="data-table">
+    <tbody>
+        <c:forEach var="entry" items="${mergedDataMap}">
+            <tr>
+                <c:set var="values" value="${entry.value.split(';')}" />
+                <c:forEach var="value" items="${values}">
+                    <td>${value}</td>
+                </c:forEach>
+            </tr>
+        </c:forEach>
+    </tbody>
+</table>
+
+<!-- JavaScript code for table functionality -->
 <script>
-    // Add JavaScript for table styling or any other desired functionality
-    // For example, you can add sorting or filtering functionality using a JavaScript library like DataTables.js
-    // Here's an example of initializing DataTables.js for the merged table:
-    $(document).ready(function() {
-        $('#mergedTable').DataTable();
-    });
+    // Add a CSS class to alternate rows for better readability
+    var rows = document.querySelectorAll('#data-table tbody tr');
+    for (var i = 0; i < rows.length; i++) {
+        if (i % 2 === 0) {
+            rows[i].classList.add('even-row');
+        } else {
+            rows[i].classList.add('odd-row');
+        }
+    }
 </script>
 
 
-	
-	
-	
-
-<!-- 	<table id="data-table" class="responsive-table">
-		<thead>
-			<tr>
-				<th>Key</th>
-				<th>Value</th>
-			</tr>
-		</thead>
-		<tbody id="data-body">
-			Data rows will be dynamically added here
-		</tbody>
-	</table>
-	
-	 -->
-<%-- 	    <table class="responsive-table">
-        <tr>
-            <th>Key</th>
-            <th>Value</th>
-        </tr>
-        <% for (HashMap.Entry<String, String> entry : dataMap.entrySet()) { %>
-            <tr>
-                <td><%= entry.getKey() %></td>
-                <td><%= entry.getValue() %></td>
-            </tr>
-        <% } %>
-    </table> --%>
+	<!-- footer -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h4>About Us</h4>
+					<p>File Merger is a web-based tool for merging two CSV and text
+						files based on a common column. This website offers a convenient
+						and efficient way to merge data from multiple sources into a
+						single, comprehensive file.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+					<p class="text-center">&copy; 2023 File Merger. All rights
+						reserved.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 </body>
 </html>
