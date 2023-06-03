@@ -18,15 +18,15 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<context:component-scan base-package="fileMerger" />
-	
+	<context:component-scan
+		base-package="fileMerger" />
+
 	<mvc:annotation-driven />
-	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"/>
-	
-	
-	
-	
-	
+	<mvc:resources location="/WEB-INF/resources/"
+		mapping="/resources/**" />
+
+
+
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		name="viewResolver">
@@ -34,7 +34,8 @@
 		<property name="suffix" value=".jsp" />
 
 	</bean>
-	
+
 	<!-- confugring multipart resolver -->
-	<bean name="multipartResolver " class="org.springframework.web.multipart.commons.CommonsMultipartResolver"	/>
+	<bean name="multipartResolver "
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 </beans> 
