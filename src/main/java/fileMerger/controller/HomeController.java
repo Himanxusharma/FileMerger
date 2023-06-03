@@ -1,7 +1,6 @@
 package fileMerger.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -15,21 +14,12 @@ public class HomeController {
 		return "index";
 	}
 
-	@RequestMapping("/form")
-	public String form() {
-		
-		System.out.println("Form is running");
-		return "form";
-
-	}
-	
 	@RequestMapping("/about")
 	public String about() {
-		
+
 		System.out.println("About is running");
 		return "about";
-		
+
 	}
-	
-	 
+
 }
