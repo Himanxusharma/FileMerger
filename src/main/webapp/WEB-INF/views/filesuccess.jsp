@@ -1,10 +1,8 @@
-<%@page import="java.util.HashMap"%>
-<%@page import="java.util.Map"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,61 +34,48 @@
 			<a href="/fileMerger/">File Merger</a>
 		</div>
 		<ul class="nav-links">
-			<!-- <li><a href= "about" >About</a></li> -->
 		</ul>
 		<div class="burger">
 			<div class="line1"></div>
 			<div class="line2"></div>
 			<div class="line3"></div>
 		</div>
-	</nav> 
+	</nav>
 	<h1>Merged</h1>
 
-<style>
-    /* CSS styles for the table */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        border: 1px solid #ddd; /* Add border around the table */
-    }
-    th, td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-        border-right: 1px solid #ddd;
-    }
-    th:last-child, td:last-child {
-        border-right: none;
-    }
+	<style>
+/* CSS styles for the table */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #ddd; /* Add border around the table */
+}
+
+th, td {
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+
+th:last-child, td:last-child {
+	border-right: none;
+}
 </style>
 
 
-<table id="data-table">
-    <tbody>
-        <c:forEach var="entry" items="${mergedDataMap}">
-            <tr>
-                <c:set var="values" value="${entry.value.split(';')}" />
-                <c:forEach var="value" items="${values}">
-                    <td>${value}</td>
-                </c:forEach>
-            </tr>
-        </c:forEach>
-    </tbody>
-</table>
-
-<!-- JavaScript code for table functionality -->
-<script>
-    // Add a CSS class to alternate rows for better readability
-    var rows = document.querySelectorAll('#data-table tbody tr');
-    for (var i = 0; i < rows.length; i++) {
-        if (i % 2 === 0) {
-            rows[i].classList.add('even-row');
-        } else {
-            rows[i].classList.add('odd-row');
-        }
-    }
-</script>
-
+	<table id="data-table">
+		<tbody>
+			<c:forEach var="entry" items="${mergedDataMap}">
+				<tr>
+					<c:set var="values" value="${entry.value.split(';')}" />
+					<c:forEach var="value" items="${values}">
+						<td>${value}</td>
+					</c:forEach>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 
 	<!-- footer -->
 	<footer>

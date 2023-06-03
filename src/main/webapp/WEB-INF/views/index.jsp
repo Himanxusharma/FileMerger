@@ -45,16 +45,15 @@
 			<div class="line2"></div>
 			<div class="line3"></div>
 		</div>
-	</nav> 
+	</nav>
 
 	<!-- preview and upload button -->
-	
-		<form action="uploadfile" method="post" enctype="multipart/form-data">
+
+	<form action="uploadfile" method="post" enctype="multipart/form-data">
 		<label for="file1">File 1:</label><br> <input type="file"
 			id="file1" accept=".csv" name="file1" required> <label
-			for="file2">File 2:</label><br>
-		<br> <input type="file" id="file2" accept=".csv" name="file2"
-			required>
+			for="file2">File 2:</label><br> <br> <input type="file"
+			id="file2" accept=".csv" name="file2" required>
 		<button Class="" name="upload">Upload</button>
 	</form>
 
