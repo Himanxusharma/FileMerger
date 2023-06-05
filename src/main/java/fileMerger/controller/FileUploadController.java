@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 @Controller
 public class FileUploadController {
@@ -30,6 +29,7 @@ public class FileUploadController {
 		// mergeColumnIndex
 		int mergeColumnIndex = 0;
 
+//		The line InputStream inputFile1 = file1.getInputStream(); is used to obtain an InputStream object from the CommonsMultipartFile object file1. This allows you to read the content of the uploaded file.
 		InputStream inputFile1 = file1.getInputStream();
 		InputStream inputFile2 = file2.getInputStream();
 
